@@ -881,8 +881,7 @@ contract SHENToken is ERC20, Ownable {
         dividendTracker = new SHENDividendTracker(RewardToken,msg.sender);
 
         IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(
-            //0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D
-            0xbdd4e5660839a088573191A9889A262c0Efc0983
+            0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D
         );
 
         address _uniswapV2Pair = IUniswapV2Factory(_uniswapV2Router.factory())
@@ -1075,7 +1074,7 @@ contract SHENToken is ERC20, Ownable {
     function excludeFromDividends(address account, bool value) external onlyOwner {
         dividendTracker.excludeFromDividends(account, value);
     }
-    
+
     function processDividendTracker(uint256 gas) external {
         (
             uint256 iterations,
